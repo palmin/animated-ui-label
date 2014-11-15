@@ -16,13 +16,13 @@ shared trailing text " apples".
 If these assumptions are not met, the text will be changed without animation.
 
 AnimatedLabel is made to allow other kinds of text interpolations. You override
-   -(id)animationContextFrom:(NSString*)sourceText to:(NSString*)targetText;
+    -(id)animationContextFrom:(NSString*)sourceText to:(NSString*)targetText;
 to make the logic that determines whether animation is possible at all and to
 perform any precalculations that would be used when calculating the interpolated
 text (which will be done many times). You return nil when there should be no animation
 and otherwise any object that suits you.
 
 To calculate the actual text you override
-   -(NSString*)textAtRatio:(CGFloat)ratio context:(id)context
+    -(NSString*)textAtRatio:(CGFloat)ratio context:(id)context
                       from:(NSString*)sourceText to:(NSString*)targetText;
 where ratio starts at 0.0 and ends at 1.0.
