@@ -19,6 +19,7 @@ then we are really animating between 100.0 and 300.0 with a shared trailing text
 <img src="example.gif"/>
 
 If these assumptions are not met, the text will be changed without animation.
+You just need the AnimatedLabel.h/m as everything else is just for testing purposes.
 
 AnimatedLabel is made to allow other kinds of text interpolations. You override
 
