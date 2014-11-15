@@ -21,6 +21,12 @@
 // it faster to calculate texts in-between source- and target- texts.
 // When nil is returned no animation is performed, and if there is nothing to
 // cache the empty string could be returned.
+//
+// Default implementation assumes the texts starts with a number and then have
+// a shared trailer such that "100 apples" -> "50 apples" has the trailer " apples"
+// and half-way in animation the text will be "75 apples" and returns NSArray with
+// NSNUmber for source and target value and shared trailing string as third element,
+// but only textAtRatio:context:from:to: needs to worry about these details.
 -(id)animationContextFrom:(NSString*)sourceText to:(NSString*)targetText;
 
 // Override to control how text changes between source and target value,
