@@ -17,9 +17,9 @@ is really 100.0 and " apples" and if we need to change the text into
 then we are really animating between 100.0 and 300.0 with a shared trailing text " apples".
 
 <img src="example.gif"/>
-
 If these assumptions are not met, the text will be changed without animation.
-You just need the AnimatedLabel.h/m as everything else is just for testing purposes.
+
+You just need the AnimatedLabel.h/m and everything else is for testing purposes.
 
 AnimatedLabel is made to allow other kinds of text interpolations. You override
 
