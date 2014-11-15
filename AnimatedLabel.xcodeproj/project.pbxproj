@@ -12,6 +12,7 @@
 		BE0938F31A17959200F54174 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0938F21A17959200F54174 /* ViewController.m */; };
 		BE0938F61A17959200F54174 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0938F41A17959200F54174 /* Main.storyboard */; };
 		BE964D4A1A17F2C600FBD87C /* AnimatedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE964D491A17F2C600FBD87C /* AnimatedLabel.m */; };
+		BE964D4D1A17F76B00FBD87C /* example.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE964D4C1A17F76B00FBD87C /* example.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,8 @@
 		BE0938F51A17959200F54174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE964D481A17F2C600FBD87C /* AnimatedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedLabel.h; sourceTree = "<group>"; };
 		BE964D491A17F2C600FBD87C /* AnimatedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedLabel.m; sourceTree = "<group>"; };
+		BE964D4B1A17F3D700FBD87C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BE964D4C1A17F76B00FBD87C /* example.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = example.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +44,8 @@
 		BE0938DE1A17959200F54174 = {
 			isa = PBXGroup;
 			children = (
+				BE964D4C1A17F76B00FBD87C /* example.gif */,
+				BE964D4B1A17F3D700FBD87C /* README.md */,
 				BE964D481A17F2C600FBD87C /* AnimatedLabel.h */,
 				BE964D491A17F2C600FBD87C /* AnimatedLabel.m */,
 				BE0938E91A17959200F54174 /* Example */,
@@ -137,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE0938F61A17959200F54174 /* Main.storyboard in Resources */,
+				BE964D4D1A17F76B00FBD87C /* example.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
