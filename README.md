@@ -2,7 +2,7 @@ animated-ui-label
 =================
 
 Animation makes it easier to understand changes that happen to data. When showing data as text
-there is no general way to animate changes and things like cross-fade is not very helpful.
+there is no general way to animate changes and things like cross-fade are not very helpful.
 
 Sometimes text conveys data such as amounts, speed, weight that can be animated in a meaningful
 way by interpolating between these amounts, speeds or weights.
