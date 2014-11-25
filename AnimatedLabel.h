@@ -10,11 +10,8 @@
 
 @interface AnimatedLabel : UILabel
 
-// change from previous text value to given one with animation in duration seconds.
--(void)setText:(NSString *)text duration:(NSTimeInterval)duration;
-
-// calls setText:duration: with duration=0.3, but I would live to somehow get the duration
-// value from the innermost animation block. If you know how, please write me at @palmin
+// Changes are animated when called inside animation block and change between
+// current text and new text allows animation (animationContextFrom: returns non-nil)
 -(void)setText:(NSString *)text;
 
 // Determine whether animation makes sense and pre-calculate object that makes

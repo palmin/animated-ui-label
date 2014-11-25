@@ -8,9 +8,16 @@
 
 #import "AnimatedLabel.h"
 
-@interface AnimatedLabel ()
-@property (nonatomic, assign) NSTimeInterval animationStarted;
-@property (nonatomic, assign) NSTimeInterval animationDuration;
+@interface AnimatedLabel () {
+    // we use this view to act upon implicit animations, by changing alpha value from 0.25 to 0.75
+    // and deriving har far we are in animation (0.0 to 1.0) from this. We have som padding to allow
+    // animation to get below and above 1.
+    UIView* inner;
+    
+    NSTimeInterval lastChange; // when there hasn't been changes for a while,
+                               // we stop looking in each run loop
+    CGFloat lastRatio;
+}
 
 @property (nonatomic, strong) id animationContext;
 @property (nonatomic, strong) NSString* sourceText;
@@ -22,16 +29,16 @@
 
 -(void)awakeFromNib {
     [super awakeFromNib];
+    
+    inner = [[UIView alloc] initWithFrame:CGRectZero];
+    inner.backgroundColor = [UIColor clearColor];
+    inner.opaque = NO;
+    [self addSubview:inner];
+    
     self.targetText = super.text;
 }
 
--(void)setText:(NSString *)text duration:(NSTimeInterval)duration {
-    // we do not start animation when animation has no length
-    if(duration <= 0.0) {
-        super.text = text;
-        return;
-    }
-
+-(void)setText:(NSString *)text {
     // we do not animate when there are no changes or no previous value
     if(super.text.length == 0 || [super.text isEqualToString:text]) {
         super.text = text;
@@ -41,9 +48,15 @@
     // store information and precalculate context
     self.sourceText = super.text;
     self.targetText = text;
-    self.animationDuration = duration;
-    self.animationStarted = [NSDate timeIntervalSinceReferenceDate];
+    lastChange = [NSDate timeIntervalSinceReferenceDate];
     self.animationContext = [self animationContextFrom:self.sourceText to:self.targetText];
+
+    // trigger core animation changes
+    [UIView performWithoutAnimation:^{
+        lastRatio = 0;
+        inner.alpha = 0.25;
+    }];
+    inner.alpha = 0.75;
     
     // we do not animate if there is no valid context
     if(self.animationContext == nil) {
@@ -53,11 +66,6 @@
 
     // schedule update for next run-loop
     [self performSelector:@selector(refreshAnimation) withObject:nil afterDelay:0];
-}
-
--(void)setText:(NSString *)text {
-    // TODO: It would be really nice to derive duration from current animation block
-    [self setText:text duration:0.3];
 }
 
 -(NSString*)text {
@@ -105,10 +113,18 @@
 }
 
 -(void)refreshAnimation {
-    NSTimeInterval secondsGone = [NSDate timeIntervalSinceReferenceDate] - self.animationStarted;
-    CGFloat ratio = secondsGone / self.animationDuration;
+    NSTimeInterval now = [NSDate timeIntervalSinceReferenceDate];
     
-    if(ratio >= 1.0) {
+    // look for changes in presentation layer
+    CGFloat opacity = [inner.layer.presentationLayer opacity];
+    CGFloat ratio = (opacity - 0.25) * 2.0;
+    if(ratio != lastRatio) {
+        lastChange = now;
+        lastRatio = ratio;
+    }
+    
+    // animatio finishes when there has been no changes for a while
+    if(now - lastChange >= 0.4) {
         // animation has finished
         super.text = self.targetText;
         return;
