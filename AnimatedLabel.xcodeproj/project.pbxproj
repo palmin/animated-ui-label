@@ -24,7 +24,6 @@
 		BE0938F11A17959200F54174 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BE0938F21A17959200F54174 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BE0938F51A17959200F54174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BE4AF9D21A2490E000DC52DB /* TODO */ = {isa = PBXFileReference; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		BE964D481A17F2C600FBD87C /* AnimatedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedLabel.h; sourceTree = "<group>"; };
 		BE964D491A17F2C600FBD87C /* AnimatedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedLabel.m; sourceTree = "<group>"; };
 		BE964D4B1A17F3D700FBD87C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -49,7 +48,6 @@
 				BE964D491A17F2C600FBD87C /* AnimatedLabel.m */,
 				BE964D4C1A17F76B00FBD87C /* example.gif */,
 				BE964D4B1A17F3D700FBD87C /* README.md */,
-				BE4AF9D21A2490E000DC52DB /* TODO */,
 				BE0938E91A17959200F54174 /* Example */,
 				BE0938E81A17959200F54174 /* Products */,
 			);

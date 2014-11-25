@@ -25,8 +25,9 @@ You just need the AnimatedLabel.h/m and everything else is for testing purposes.
 AnimatedLabel will determine the duration and kind of animation from the regular UIView animations, 
 such that you can animate along with other things and even do spring-animations. 
 This is implemented by changing a internal view and then looking at the corresponding property on 
-the presentation-layer to figure out where in the animation we are from start (0) to end (1) but
-this work is done on the run-loop and keeps going when animation position has not changed for a while.
+the presentation-layer to figure out where in the animation we are from start (0) to end (1). 
+This work is done on the run-loop and keeps going when animation position has not changed for a while,
+which is not necesarily when we reach 1.
 
 AnimatedLabel is made to allow other kinds of text interpolations. You override
 

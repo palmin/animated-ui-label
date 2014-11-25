@@ -1,3 +1,0 @@
-We can follow regular UIView animations by changing some invisible animatable property (perhaps in subview just for this purpose or we could change background color from transparent black to transparent white) and at each loop read value from presentation layer and use this to determine ratio. 
-Animation would stop when ratio has been unchanged for some time. 
-
