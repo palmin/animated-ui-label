@@ -20,7 +20,12 @@ then we are really animating between 100.0 and 300.0 with a shared trailing text
 
 If these assumptions are not met, the text will be changed without animation.
 
-You just need the AnimatedLabel.h/m and everything else is for testing purposes. 
+You just need the AnimatedLabel.h/m and everything else is for testing purposes. Try something
+like this
+
+    [UIView animateWithDuration:0.4 animations:^{
+       self.animatedLabel.text = @"300 apples";
+    }];
 
 AnimatedLabel will determine the duration and kind of animation from the regular UIView animations, 
 such that you can animate along with other things and even do spring-animations. 
