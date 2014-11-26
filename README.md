@@ -46,4 +46,4 @@ To calculate the actual text you override
 
     -(NSString*)textAtRatio:(CGFloat)ratio context:(id)context
                       from:(NSString*)sourceText to:(NSString*)targetText;
-where ratio starts at 0.0 and ends at 1.0.
+where ratio starts at 0.0 and ends at 1.0 but make reach outside this interval during spring animations.
