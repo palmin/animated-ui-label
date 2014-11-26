@@ -13,8 +13,8 @@ number and a trailer, such that a text
     "100 apples" 
 is really 100.0 and " apples" and if we need to change the text into 
 
-    "300 apples"
-then we are really animating between 100.0 and 300.0 with a shared trailing text " apples".
+    "400 apples"
+then we are really animating between 100.0 and 400.0 with a shared trailing text " apples".
 
 <img src="example.gif"/>
 
@@ -24,7 +24,7 @@ You just need the AnimatedLabel.h/m and everything else is for testing purposes.
 like this
 
     [UIView animateWithDuration:0.4 animations:^{
-       self.animatedLabel.text = @"300 apples";
+       self.animatedLabel.text = @"400 apples";
     }];
 
 AnimatedLabel will determine the duration and kind of animation from the regular UIView animations, 
