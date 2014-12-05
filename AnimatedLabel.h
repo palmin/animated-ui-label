@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Anders Borum. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
 
 @interface AnimatedLabel : UILabel
