@@ -9,9 +9,11 @@ way by interpolating between these amounts, speeds or weights.
 
 This UILabel subclass tries to help in these circumstances by splitting text text into a leading
 number and a trailer, such that a text
-    `"100 apples"`
+
+    "100 apples"
 is really 100.0 and " apples" and if we need to change the text into 
-    `"400 apples"`
+
+    "400 apples"
 then we are really animating between 100.0 and 400.0 with a shared trailing text " apples".
 
 <img src="example.gif"/>
