@@ -32,7 +32,7 @@ such that you can animate along with other things and even do spring-animations.
 This is implemented by changing a internal view and then looking at the corresponding property on 
 the presentation-layer to figure out where in the animation we are from start (0) to end (1). 
 This work is done on the run-loop and keeps going when animation position has not changed for a while,
-which is not necesarily when we reach 1.
+which is not necesarily when we reach 1. 
 
 AnimatedLabel is made to allow other kinds of text interpolations. You override
 
@@ -47,3 +47,11 @@ To calculate the actual text you override
     -(NSString*)textAtRatio:(CGFloat)ratio context:(id)context
                       from:(NSString*)sourceText to:(NSString*)targetText;
 where ratio starts at 0.0 and ends at 1.0 but might reach outside this interval during spring animations.
+
+The inner workings that allows making changes that follow UIView animations can be found as a UIView extension
+in AnimView and can be used to make other kinds of UIView drivens animations on non-animatable properties.
+As a simple example one could animate how text changes from empty to non-empty by adding one character 
+at a time with something like:
+    [label change:^(CGFloat ratio) {
+       label.text = [text substringToIndex:(int)(ratio * text.length)];
+    }];

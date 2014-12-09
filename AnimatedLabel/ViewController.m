@@ -17,6 +17,14 @@
 
 @implementation ViewController
 
+- (void)writerAnim {
+    NSString* text = @"100 apples";
+    [UIView animateWithDuration:1 animations:^{
+        [self.label change:^(CGFloat ratio) {
+            self.label.text = [text substringToIndex:(int)(ratio * text.length)];
+        }];
+    }];
+}
 
 - (void)easingAnim {
     [UIView animateWithDuration:2 animations:^{
@@ -36,10 +44,12 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    self.label.text = @"";
 
     // wait between animations to make it easier to follow
-    [self performSelector:@selector(easingAnim) withObject:nil afterDelay:2];
-    [self performSelector:@selector(springAnim) withObject:nil afterDelay:5];
+    [self performSelector:@selector(writerAnim) withObject:nil afterDelay:2];
+    [self performSelector:@selector(easingAnim) withObject:nil afterDelay:4];
+    [self performSelector:@selector(springAnim) withObject:nil afterDelay:8];
 }
 
 - (void)viewDidLoad {
