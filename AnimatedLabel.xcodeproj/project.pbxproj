@@ -11,7 +11,7 @@
 		BE0938F01A17959200F54174 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0938EF1A17959200F54174 /* AppDelegate.m */; };
 		BE0938F31A17959200F54174 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0938F21A17959200F54174 /* ViewController.m */; };
 		BE0938F61A17959200F54174 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0938F41A17959200F54174 /* Main.storyboard */; };
-		BE964D4A1A17F2C600FBD87C /* AnimatedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE964D491A17F2C600FBD87C /* AnimatedLabel.m */; };
+		BE0EC79C1A36EB8E00130CCA /* AnimView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0EC79B1A36EB8E00130CCA /* AnimView.m */; };
 		BE964D4D1A17F76B00FBD87C /* example.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE964D4C1A17F76B00FBD87C /* example.gif */; };
 /* End PBXBuildFile section */
 
@@ -24,8 +24,8 @@
 		BE0938F11A17959200F54174 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		BE0938F21A17959200F54174 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BE0938F51A17959200F54174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BE964D481A17F2C600FBD87C /* AnimatedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedLabel.h; sourceTree = "<group>"; };
-		BE964D491A17F2C600FBD87C /* AnimatedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedLabel.m; sourceTree = "<group>"; };
+		BE0EC79A1A36EB8E00130CCA /* AnimView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimView.h; sourceTree = "<group>"; };
+		BE0EC79B1A36EB8E00130CCA /* AnimView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimView.m; sourceTree = "<group>"; };
 		BE964D4B1A17F3D700FBD87C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BE964D4C1A17F76B00FBD87C /* example.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = example.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,8 +44,8 @@
 		BE0938DE1A17959200F54174 = {
 			isa = PBXGroup;
 			children = (
-				BE964D481A17F2C600FBD87C /* AnimatedLabel.h */,
-				BE964D491A17F2C600FBD87C /* AnimatedLabel.m */,
+				BE0EC79A1A36EB8E00130CCA /* AnimView.h */,
+				BE0EC79B1A36EB8E00130CCA /* AnimView.m */,
 				BE964D4C1A17F76B00FBD87C /* example.gif */,
 				BE964D4B1A17F3D700FBD87C /* README.md */,
 				BE0938E91A17959200F54174 /* Example */,
@@ -153,8 +153,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE0EC79C1A36EB8E00130CCA /* AnimView.m in Sources */,
 				BE0938F31A17959200F54174 /* ViewController.m in Sources */,
-				BE964D4A1A17F2C600FBD87C /* AnimatedLabel.m in Sources */,
 				BE0938F01A17959200F54174 /* AppDelegate.m in Sources */,
 				BE0938ED1A17959200F54174 /* main.m in Sources */,
 			);

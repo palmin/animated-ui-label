@@ -7,35 +7,44 @@
 //
 
 #import "ViewController.h"
-#import "AnimatedLabel.h"
+#import "AnimView.h"
 
 @interface ViewController ()
 
-@property (strong, nonatomic) IBOutlet AnimatedLabel *animatedLabel;
+@property (strong, nonatomic) IBOutlet UILabel *label;
 
 @end
 
 @implementation ViewController
 
+
+- (void)easingAnim {
+    [UIView animateWithDuration:2 animations:^{
+        [self.label change:^(CGFloat ratio) {
+            self.label.text = [NSString stringWithFormat:@"%d apples", 100 + (int)(300 * ratio)];
+        }];
+        self.label.center = CGPointMake(self.label.center.x, 400);
+    }];
+}
+
+- (void)springAnim {
+    [UIView animateWithDuration:3 delay:0
+         usingSpringWithDamping:0.4 initialSpringVelocity:-1 options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         [self.label change:^(CGFloat ratio) {
+                             self.label.text = [NSString stringWithFormat:@"%d apples", 400 - (int)(300 * ratio)];
+                         }];
+                         
+                         self.label.center = CGPointMake(self.label.center.x, 100);
+                     } completion:nil];
+}
+
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
     // wait between animations to make it easier to follow
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:2 animations:^{
-            self.animatedLabel.text = @"400 apples";
-            self.animatedLabel.center = CGPointMake(self.animatedLabel.center.x, 400);
-        }];
-    });
-
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:3 delay:0
-             usingSpringWithDamping:0.4 initialSpringVelocity:-1 options:UIViewAnimationOptionCurveEaseOut
-                         animations:^{
-                             self.animatedLabel.text = @"100 apples";
-                             self.animatedLabel.center = CGPointMake(self.animatedLabel.center.x, 100);
-                         } completion:nil];
-    });
+    [self performSelector:@selector(easingAnim) withObject:nil afterDelay:2];
+    [self performSelector:@selector(springAnim) withObject:nil afterDelay:5];
 }
 
 - (void)viewDidLoad {
