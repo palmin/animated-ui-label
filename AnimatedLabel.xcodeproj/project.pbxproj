@@ -12,6 +12,7 @@
 		BE0938F31A17959200F54174 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0938F21A17959200F54174 /* ViewController.m */; };
 		BE0938F61A17959200F54174 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE0938F41A17959200F54174 /* Main.storyboard */; };
 		BE0EC79C1A36EB8E00130CCA /* AnimView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0EC79B1A36EB8E00130CCA /* AnimView.m */; };
+		BE0EC7A61A37286300130CCA /* AnimatedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0EC7A51A37286300130CCA /* AnimatedLabel.m */; };
 		BE964D4D1A17F76B00FBD87C /* example.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE964D4C1A17F76B00FBD87C /* example.gif */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,8 @@
 		BE0938F51A17959200F54174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE0EC79A1A36EB8E00130CCA /* AnimView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimView.h; sourceTree = "<group>"; };
 		BE0EC79B1A36EB8E00130CCA /* AnimView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimView.m; sourceTree = "<group>"; };
+		BE0EC7A41A37286300130CCA /* AnimatedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedLabel.h; sourceTree = "<group>"; };
+		BE0EC7A51A37286300130CCA /* AnimatedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedLabel.m; sourceTree = "<group>"; };
 		BE964D4B1A17F3D700FBD87C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BE964D4C1A17F76B00FBD87C /* example.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = example.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,6 +47,8 @@
 		BE0938DE1A17959200F54174 = {
 			isa = PBXGroup;
 			children = (
+				BE0EC7A41A37286300130CCA /* AnimatedLabel.h */,
+				BE0EC7A51A37286300130CCA /* AnimatedLabel.m */,
 				BE0EC79A1A36EB8E00130CCA /* AnimView.h */,
 				BE0EC79B1A36EB8E00130CCA /* AnimView.m */,
 				BE964D4C1A17F76B00FBD87C /* example.gif */,
@@ -155,6 +160,7 @@
 			files = (
 				BE0EC79C1A36EB8E00130CCA /* AnimView.m in Sources */,
 				BE0938F31A17959200F54174 /* ViewController.m in Sources */,
+				BE0EC7A61A37286300130CCA /* AnimatedLabel.m in Sources */,
 				BE0938F01A17959200F54174 /* AppDelegate.m in Sources */,
 				BE0938ED1A17959200F54174 /* main.m in Sources */,
 			);

@@ -20,9 +20,7 @@
 
 - (void)easingAnim {
     [UIView animateWithDuration:2 animations:^{
-        [self.label change:^(CGFloat ratio) {
-            self.label.text = [NSString stringWithFormat:@"%d apples", 100 + (int)(300 * ratio)];
-        }];
+        self.label.text = @"400 apples";
         self.label.center = CGPointMake(self.label.center.x, 400);
     }];
 }
@@ -31,10 +29,7 @@
     [UIView animateWithDuration:3 delay:0
          usingSpringWithDamping:0.4 initialSpringVelocity:-1 options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         [self.label change:^(CGFloat ratio) {
-                             self.label.text = [NSString stringWithFormat:@"%d apples", 400 - (int)(300 * ratio)];
-                         }];
-                         
+                         self.label.text = @"100 apples";
                          self.label.center = CGPointMake(self.label.center.x, 100);
                      } completion:nil];
 }

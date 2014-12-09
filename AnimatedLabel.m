@@ -7,17 +7,9 @@
 //
 
 #import "AnimatedLabel.h"
+#import "AnimView.h"
 
-@interface AnimatedLabel () {
-    // we use this view to act upon implicit animations, by changing alpha value from 0.25 to 0.75
-    // and deriving har far we are in animation (0.0 to 1.0) from this. We have som padding to allow
-    // animation to get below and above 1.
-    UIView* inner;
-    
-    NSTimeInterval lastChange; // when there hasn't been changes for a while,
-                               // we stop looking in each run loop
-    CGFloat lastRatio;
-}
+@interface AnimatedLabel ()
 
 @property (nonatomic, strong) id animationContext;
 @property (nonatomic, strong) NSString* sourceText;
@@ -29,12 +21,6 @@
 
 -(void)awakeFromNib {
     [super awakeFromNib];
-    
-    inner = [[UIView alloc] initWithFrame:CGRectZero];
-    inner.backgroundColor = [UIColor clearColor];
-    inner.opaque = NO;
-    [self addSubview:inner];
-    
     self.targetText = super.text;
 }
 
@@ -48,15 +34,7 @@
     // store information and precalculate context
     self.sourceText = super.text;
     self.targetText = text;
-    lastChange = [NSDate timeIntervalSinceReferenceDate];
     self.animationContext = [self animationContextFrom:self.sourceText to:self.targetText];
-
-    // trigger core animation changes
-    [UIView performWithoutAnimation:^{
-        lastRatio = 0;
-        inner.alpha = 0.25;
-    }];
-    inner.alpha = 0.75;
     
     // we do not animate if there is no valid context
     if(self.animationContext == nil) {
@@ -64,8 +42,11 @@
         return;
     }
 
-    // schedule update for next run-loop
-    [self performSelector:@selector(refreshAnimation) withObject:nil afterDelay:0];
+    [self change:^(CGFloat ratio) {
+        super.text = [self textAtRatio:ratio context:self.animationContext
+                                  from:self.sourceText to:self.targetText];
+
+    }];
 }
 
 -(NSString*)text {
@@ -110,32 +91,6 @@
     // calculate interpolated value
     double value = source.doubleValue + ratio * (target.doubleValue - source.doubleValue);
     return [NSString stringWithFormat:@"%d%@", (int)value, trailer];
-}
-
--(void)refreshAnimation {
-    NSTimeInterval now = [NSDate timeIntervalSinceReferenceDate];
-    
-    // look for changes in presentation layer
-    CGFloat opacity = [inner.layer.presentationLayer opacity];
-    CGFloat ratio = (opacity - 0.25) * 2.0;
-    if(ratio != lastRatio) {
-        lastChange = now;
-        lastRatio = ratio;
-    }
-    
-    // animatio finishes when there has been no changes for a while
-    if(now - lastChange >= 0.4) {
-        // animation has finished
-        super.text = self.targetText;
-        return;
-    }
-    
-    // insert transient value
-    super.text = [self textAtRatio:ratio context:self.animationContext
-                              from:self.sourceText to:self.targetText];
-    
-    // schedule update for next run-loop
-    [self performSelector:@selector(refreshAnimation) withObject:nil afterDelay:0];
 }
 
 @end
