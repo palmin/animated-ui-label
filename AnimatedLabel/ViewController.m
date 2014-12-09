@@ -21,7 +21,7 @@
     NSString* text = @"100 apples";
     [UIView animateWithDuration:1 animations:^{
         [self.label change:^(CGFloat ratio) {
-            self.label.text = [text substringToIndex:(int)(ratio * text.length)];
+            self.label.text = [text substringToIndex: ratio * text.length];
         }];
     }];
 }
@@ -50,16 +50,6 @@
     [self performSelector:@selector(writerAnim) withObject:nil afterDelay:2];
     [self performSelector:@selector(easingAnim) withObject:nil afterDelay:4];
     [self performSelector:@selector(springAnim) withObject:nil afterDelay:8];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

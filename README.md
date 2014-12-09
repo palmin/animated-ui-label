@@ -54,5 +54,5 @@ As a simple example one could animate how text changes from empty to non-empty b
 at a time with something like:
 
     [label change:^(CGFloat ratio) {
-       label.text = [text substringToIndex:(int)(ratio * text.length)];
+       label.text = [text substringToIndex: ratio * text.length];
     }];
