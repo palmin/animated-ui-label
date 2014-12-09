@@ -52,6 +52,7 @@ The inner workings that allows making changes that follow UIView animations can 
 in AnimView and can be used to make other kinds of UIView drivens animations on non-animatable properties.
 As a simple example one could animate how text changes from empty to non-empty by adding one character 
 at a time with something like:
+
     [label change:^(CGFloat ratio) {
        label.text = [text substringToIndex:(int)(ratio * text.length)];
     }];
