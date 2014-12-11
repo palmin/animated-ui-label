@@ -11,8 +11,6 @@
 
 @interface AnimatedLabel ()
 
-@property (nonatomic, strong) id animationContext;
-@property (nonatomic, strong) NSString* sourceText;
 @property (nonatomic, strong) NSString* targetText;
 
 @end
@@ -32,19 +30,19 @@
     }
     
     // store information and precalculate context
-    self.sourceText = super.text;
+    NSString* sourceText = super.text;
     self.targetText = text;
-    self.animationContext = [self animationContextFrom:self.sourceText to:self.targetText];
+    id animationContext = [self animationContextFrom:sourceText to:self.targetText];
     
     // we do not animate if there is no valid context
-    if(self.animationContext == nil) {
+    if(animationContext == nil) {
         super.text = text;
         return;
     }
 
     [self change:^(CGFloat ratio) {
-        super.text = [self textAtRatio:ratio context:self.animationContext
-                                  from:self.sourceText to:self.targetText];
+        super.text = [self textAtRatio:ratio context:animationContext
+                                  from:sourceText to:self.targetText];
 
     }];
 }
