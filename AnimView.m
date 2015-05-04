@@ -29,11 +29,13 @@
     // fix starting ratio, where presentation layer hasn't yet updated opacity
     if(lastRatio < 0.0 && ratio < 0.0) ratio = 0;
     
-    if(ratio != lastRatio) {
+    if(ratio != lastRatio && ratio >= 0.0) {
         lastChange = now;
         lastRatio = ratio;
         
-        self.change(ratio);
+        [UIView performWithoutAnimation:^{
+            self.change(ratio);
+        }];
     }
     
     // animation finishes when there has been no changes for a while
