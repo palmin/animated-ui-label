@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,27 +18,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I3E-Ue-pCR">
-                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3E-Ue-pCR" userLabel="box1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100 apples" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faz-Tu-ya3" customClass="AnimatedLabel">
-                                        <rect key="frame" x="10" y="74" width="300" height="52"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAh-ee-xN7" userLabel="box2">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faz-Tu-ya3" customClass="AnimatedLabel">
+                                        <rect key="frame" x="160" y="100" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="44"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="ZAh-ee-xN7" firstAttribute="top" secondItem="I3E-Ue-pCR" secondAttribute="top" id="4Ss-J7-21w"/>
+                                    <constraint firstItem="ZAh-ee-xN7" firstAttribute="height" secondItem="I3E-Ue-pCR" secondAttribute="height" multiplier="0.5" id="96O-9Z-dkF"/>
+                                    <constraint firstAttribute="centerX" secondItem="faz-Tu-ya3" secondAttribute="centerX" id="AZc-or-MxG"/>
+                                    <constraint firstItem="faz-Tu-ya3" firstAttribute="top" secondItem="I3E-Ue-pCR" secondAttribute="top" constant="100" id="EiR-En-IeA"/>
+                                    <constraint firstItem="ZAh-ee-xN7" firstAttribute="leading" secondItem="I3E-Ue-pCR" secondAttribute="leading" id="KmT-mw-LvA"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZAh-ee-xN7" secondAttribute="trailing" id="wJI-OL-ivA"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="I3E-Ue-pCR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Sgy-ZF-jbY"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="I3E-Ue-pCR" secondAttribute="bottom" id="bls-5k-AQr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I3E-Ue-pCR" secondAttribute="trailing" constant="-16" id="dPR-JI-Mss"/>
+                            <constraint firstItem="I3E-Ue-pCR" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-20" id="g19-V1-ZDG"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="wGm-Ap-Hir" appends="YES" id="iP0-AY-TVh"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="box1" destination="I3E-Ue-pCR" id="wlI-qn-T9Q"/>
+                        <outlet property="box2" destination="ZAh-ee-xN7" id="iNj-7r-xXI"/>
                         <outlet property="label" destination="faz-Tu-ya3" id="clS-cb-idk"/>
+                        <outlet property="textTop" destination="EiR-En-IeA" id="xw2-jc-2c6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="wGm-Ap-Hir">
+                    <connections>
+                        <action selector="tap:" destination="vXZ-lx-hvc" id="HH3-Ne-fjQ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="148" y="382"/>
         </scene>
     </scenes>
 </document>
