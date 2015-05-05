@@ -56,3 +56,5 @@ at a time with something like:
     [label change:^(CGFloat ratio) {
        label.text = [text substringToIndex: ratio * text.length];
     }];
+
+You can reach me as @palmin on Twitter.
