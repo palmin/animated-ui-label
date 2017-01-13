@@ -1,5 +1,5 @@
 //
-//  AnimatedLabel.h
+//  AnimatedLabel.h b
 //  AnimatedLabel
 //
 //  Created by Anders Borum on 15/11/14.
