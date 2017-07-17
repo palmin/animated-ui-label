@@ -48,8 +48,8 @@ To calculate the actual text you override
                       from:(NSString*)sourceText to:(NSString*)targetText;
 where ratio starts at 0.0 and ends at 1.0 but might reach outside this interval during spring animations.
 
-The inner workings that allows making changes that follow UIView animations can be found as a UIView extension
-in AnimView and can be used to make other kinds of UIView drivens animations on non-animatable properties.
+The inner workings that allows 
+making changes that follow UIView animations can be found as a UIView extension in AnimView and can be used to make other kinds of UIView drivens animations on non-animatable properties.
 As a simple example one could animate how text changes from empty to non-empty by adding one character 
 at a time with something like:
 
