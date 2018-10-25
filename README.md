@@ -57,4 +57,4 @@ at a time with something like:
        label.text = [text substringToIndex: ratio * text.length];
     }];
 
-You can reach me as @palmin on Twitter.
+You can reach me as [@palmin](https://twitter.com/palmin) on Twitter.
