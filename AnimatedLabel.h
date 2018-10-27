@@ -1,6 +1,6 @@
 //
 //  AnimatedLabel.h b
-//  AnimatedLabel
+//  AnimatedLabel  
 //
 //  Created by Anders Borum on 15/11/14.
 //  Copyright (c) 2014 Anders Borum. All rights reserved.
